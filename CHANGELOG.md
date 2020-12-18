@@ -12,6 +12,9 @@ All notable changes to this project will be documented in this file.
 - **Ruleset:**
   - Added support for UFW firewall to decoders. ([#7100](https://github.com/wazuh/wazuh/pull/7100))
 
+- **Framework:**
+  - Added a new database upgrade function for rbac.db. ([#6963](https://github.com/wazuh/wazuh/pull/6963))
+
 ### Changed
 
 - **Core:**
@@ -38,7 +41,7 @@ All notable changes to this project will be documented in this file.
   - Fixed a bug in FIM that produced wrong alerts when the file limit was reached. ([#6802](https://github.com/wazuh/wazuh/pull/6802))
   - Fixed a bug in Analysisd that reserved the static decoder field name "command" but never used it. ([#7105](https://github.com/wazuh/wazuh/pull/7105))
   - Fixed evaluation of fields in the tag `<description>` of rules. ([#7073](https://github.com/wazuh/wazuh/pull/7073))
-
+  
 
 ## [v4.1.0]
 
