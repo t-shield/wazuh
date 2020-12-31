@@ -17,6 +17,7 @@
 #include "os_regex/os_regex.h"
 #include "os_execd/execd.h"
 #include "eventinfo.h"
+#include "syscheck_op.h"
 
 
 void OS_Exec(int execq, int *arq, const Eventinfo *lf, const active_response *ar)
@@ -67,8 +68,8 @@ void OS_Exec(int execq, int *arq, const Eventinfo *lf, const active_response *ar
     }
 
     /* Get filename */
-    if (lf->filename && (ar->ar_cmd->expect & FILENAME)) {
-        filename = os_shell_escape(lf->filename);
+    if (lf->fields[FIM_FILE].value && (ar->ar_cmd->expect & FILENAME)) {
+        filename = os_shell_escape(lf->fields[FIM_FILE].value);
     }
 
     /* Get extra_args */
