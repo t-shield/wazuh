@@ -3405,6 +3405,13 @@ components:
     CDBListFile:
       $ref: '#/components/schemas/RulesetFile'
 
+    CDBListRaw:
+      type: object
+      properties:
+        list:
+          type: string
+          description: "Content of the CDB list file"
+
     # Overview models
     OverviewAgents:
       type: object
@@ -9104,7 +9111,7 @@ paths:
                   - type: object
                     properties:
                       data:
-                        $ref: '#/components/schemas/AllItemsResponse'
+                        $ref: '#/components/schemas/CDBListRaw:'
               example: |
                 audit-wazuh-w:write
                 audit-wazuh-r:read
