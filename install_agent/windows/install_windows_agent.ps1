@@ -1,10 +1,8 @@
 # Usage: (run Powershell as administrator)
-# .\install_windows_agent.ps1 -server <server_ip>
+# .\install_windows_agent.ps1 <server_ip>
 
 # get ip or hostname of wazuh server from argument
-param (
-  [string]$server = "127.0.0.1"
-)
+$server = $args[0]
 
 # Elevating previledge
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`" `"$args`"" -Verb RunAs; exit }
